@@ -1,2 +1,7 @@
 #!/usr/bin/env node
-console.log('Welcome to the Brain Games!');
+import { printWelcome, sayHi, getUserName } from '..';
+
+printWelcome();
+console.log('');
+const userName = getUserName();
+sayHi(userName);
