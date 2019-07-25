@@ -1,7 +1,7 @@
 {
   "name": "brain_games",
   "version": "1.0.0",
-  "description": "",
+  "description": "My first project",
   "main": "index.js",
   "files": [
     "dist"
@@ -23,6 +23,10 @@
     "type": "git",
     "url": "git+https://github.com/Baytser/frontend-project-lvl1.git"
   },
+  "keywords": [
+    "games",
+    "brain-games"
+  ],
   "author": "Baitser Serhii",
   "license": "ISC",
   "bugs": {
