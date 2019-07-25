@@ -3,8 +3,10 @@
 Install npm link <br>
 brain-even:
 [![asciicast](https://asciinema.org/a/258984.svg)](https://asciinema.org/a/258984)
+<br>
 brain-calc:
 [![asciicast](https://asciinema.org/a/259157.svg)](https://asciinema.org/a/259157)
+<br>
 brain-gcd:
 [![asciicast](https://asciinema.org/a/259158.svg)](https://asciinema.org/a/259158)
 
