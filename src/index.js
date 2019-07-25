@@ -4,11 +4,13 @@ import {
 } from '@hexlet/pairs';
 
 const printWelcome = () => console.log('Welcome to the Brain Games!');
+const printRules = (rules = '') => (rules === '' ? null : console.log(rules));
 const sayHi = name => console.log(`Hello, ${name}`);
 const getUserName = () => readlineSync.question('May I have your name? ', { defaultInput: 'John Doe' });
 export const getRandomNum = (min, max) => Math.floor(Math.random() * (max - min + 1)) + min;
 export const generateGame = (rules, gameFunc = cons()) => {
   printWelcome();
+  printRules(rules);
   console.log();
   const userName = getUserName();
   sayHi(userName);
@@ -28,7 +30,7 @@ export const generateGame = (rules, gameFunc = cons()) => {
       console.log('Correct!');
       return iter(func, acc + 1);
     }
-    return console.log(`'${userAnswer}' is wrong answer ;(. Correct answer was '${rightAnswer}'\nLet's try again, ${userName}!`);
+    return console.log(`'${userAnswer}' is wrong answer ;(. Correct answer was '${rightAnswer}\nLet's try again, ${userName}!`);
   };
   return iter(gameFunc, 0);
 };

@@ -6,7 +6,6 @@ const gameDate = () => {
   const num1 = getRandomNum(0, 100);
   const num2 = getRandomNum(0, 100);
   const numGameDate = getRandomNum(0, 3);
-  console.log(`numGameDate: ${numGameDate}`);
   switch (numGameDate) {
     case 0:
       return cons(`${num1} + ${num2}`, String(num1 + num2));
