@@ -1,5 +1,6 @@
+[![Maintainability](https://api.codeclimate.com/v1/badges/4a0055d0c79aa2815755/maintainability)](https://codeclimate.com/github/Baytser/frontend-project-lvl1/maintainability)
 [![Build Status](https://travis-ci.com/Baytser/frontend-project-lvl1.svg?branch=master)](https://travis-ci.com/Baytser/frontend-project-lvl1)
-# frontend-project-lvl1
+# Brain-Games
 Install npm link <br>
 brain-even:
 <br>
