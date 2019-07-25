@@ -1,5 +1,10 @@
 [![Build Status](https://travis-ci.com/Baytser/frontend-project-lvl1.svg?branch=master)](https://travis-ci.com/Baytser/frontend-project-lvl1)
 # frontend-project-lvl1
-Install npm link
+Install npm link <br>
+brain-even:
 [![asciicast](https://asciinema.org/a/258984.svg)](https://asciinema.org/a/258984)
+brain-calc:
+[![asciicast](https://asciinema.org/a/259157.svg)](https://asciinema.org/a/259157)
+brain-gcd:
+[![asciicast](https://asciinema.org/a/259158.svg)](https://asciinema.org/a/259158)
 
