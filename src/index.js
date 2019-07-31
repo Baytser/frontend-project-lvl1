@@ -25,7 +25,7 @@ export default (description, getGameDate) => {
       return iter(func, acc + 1);
     }
     console.log(`'${userAnswer}' is wrong answer ;(. Correct answer was '${rightAnswer}'`);
-    console.log(`Let's try again, ${userName}!`);
+    return console.log(`Let's try again, ${userName}!`);
   };
   return iter(getGameDate, 0);
 };
