@@ -1,4 +1,4 @@
 #!/usr/bin/env node
-import { generateGame } from '.';
+import generateGame from '.';
 
 export default () => generateGame('');
