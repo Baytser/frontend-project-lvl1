@@ -6,21 +6,21 @@ const description = 'What number is missing in the progression?';
 const progressionLength = 10;
 
 const getGameDate = () => {
-  const num = getRandomNum(1, 10);
+  const firstElement = getRandomNum(1, 10);
   const progressionDiff = getRandomNum(1, 10);
-  const hiddenPositionElement = getRandomNum(0, progressionLength - 1);
+  const hiddenElementPosition = getRandomNum(0, progressionLength - 1);
   const progression = '';
 
   const iter = (accProgression, count) => {
     if (count === progressionLength) {
-      const hiddenElement = num + progressionDiff * hiddenPositionElement;
+      const hiddenElement = firstElement + progressionDiff * hiddenElementPosition;
       const question = cons(accProgression, String(hiddenElement));
       return question;
     }
-    if (count === hiddenPositionElement) {
+    if (count === hiddenElementPosition) {
       return iter(`${accProgression} ..`, count + 1);
     }
-    const progressionElement = num + progressionDiff * count;
+    const progressionElement = firstElement + progressionDiff * count;
     return iter(`${accProgression} ${progressionElement}`, count + 1);
   };
 

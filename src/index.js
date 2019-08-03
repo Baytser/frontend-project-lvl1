@@ -12,17 +12,17 @@ export default (description, getGameDate) => {
   const userName = readlineSync.question('May I have your name? ', { defaultInput: 'John Doe' });
   console.log(`Hello, ${userName}`);
   console.log();
-  const iter = (func, acc) => {
-    if (acc === correctAnswerCount) {
+  const iter = (getQuestion, answersCount) => {
+    if (answersCount === correctAnswerCount) {
       return console.log(`Congratulations, ${userName}!`);
     }
-    const curGame = func();
-    console.log(`Question: ${car(curGame)}`);
+    const currentGame = getQuestion();
+    console.log(`Question: ${car(currentGame)}`);
     const userAnswer = readlineSync.question('Your answer: ', { defaultInput: '' });
-    const rightAnswer = cdr(curGame);
+    const rightAnswer = cdr(currentGame);
     if (userAnswer === rightAnswer) {
       console.log('Correct!');
-      return iter(func, acc + 1);
+      return iter(getQuestion, answersCount + 1);
     }
     console.log(`'${userAnswer}' is wrong answer ;(. Correct answer was '${rightAnswer}'`);
     return console.log(`Let's try again, ${userName}!`);
