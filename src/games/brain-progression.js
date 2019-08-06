@@ -13,9 +13,9 @@ const getGameDate = () => {
 
   const iter = (accProgression, count) => {
     if (count === progressionLength) {
-      const hiddenElement = firstElement + progressionDiff * hiddenElementPosition;
-      const question = cons(accProgression, String(hiddenElement));
-      return question;
+      const rightAnswer = firstElement + progressionDiff * hiddenElementPosition;
+      const roundData = cons(accProgression, String(rightAnswer));
+      return roundData;
     }
     if (count === hiddenElementPosition) {
       return iter(`${accProgression} ..`, count + 1);

@@ -23,8 +23,8 @@ const isPrime = (num) => {
 const getGameDate = () => {
   const num = getRandomNum(0, 100);
   const rightAnswer = isPrime(num) ? 'yes' : 'no';
-  const question = cons(String(num), rightAnswer);
-  return question;
+  const roundData = cons(String(num), rightAnswer);
+  return roundData;
 };
 
 export default () => generateGame(description, getGameDate);

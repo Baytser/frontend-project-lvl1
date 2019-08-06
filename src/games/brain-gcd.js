@@ -22,8 +22,8 @@ const getGameDate = () => {
   const num1 = getRandomNum(1, 100);
   const num2 = getRandomNum(1, 100);
   const rightAnswer = getGcd(num1, num2);
-  const question = cons(`${num1} ${num2}`, String(rightAnswer));
-  return question;
+  const roundData = cons(`${num1} ${num2}`, String(rightAnswer));
+  return roundData;
 };
 
 export default () => generateGame(description, getGameDate);
