@@ -18,12 +18,13 @@ const getGcd = (num1, num2) => {
   return getGcd(firstNum, secondNum);
 };
 
-const getGameDate = () => {
+const getData = () => {
   const num1 = getRandomNum(1, 100);
   const num2 = getRandomNum(1, 100);
   const rightAnswer = getGcd(num1, num2);
-  const roundData = cons(`${num1} ${num2}`, String(rightAnswer));
+  const question = `${num1} ${num2}`;
+  const roundData = cons(question, String(rightAnswer));
   return roundData;
 };
 
-export default () => generateGame(description, getGameDate);
+export default () => generateGame(description, getData);

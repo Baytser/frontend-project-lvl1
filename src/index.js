@@ -3,9 +3,9 @@ import {
   car, cdr,
 } from '@hexlet/pairs';
 
-const raundsCount = 3;
+const roundsCount = 3;
 
-export default (description, getGameDate) => {
+export default (description, getGameData) => {
   console.log('Welcome to the Brain Games!');
   console.log(description);
   console.log();
@@ -13,22 +13,20 @@ export default (description, getGameDate) => {
   console.log(`Hello, ${userName}`);
   console.log();
 
-  const iter = (getRoundData, numRaund) => {
-    if (numRaund < raundsCount) {
-      console.log(`Congratulations, ${userName}!`);
-      return;
+  const iter = (counter) => {
+    if (counter === roundsCount) {
+      return console.log(`Congratulations, ${userName}!`);
     }
-    const currentGame = getRoundData();
+    const currentGame = getGameData();
     console.log(`Question: ${car(currentGame)}`);
     const userAnswer = readlineSync.question('Your answer: ', { defaultInput: '' });
     const rightAnswer = cdr(currentGame);
     if (userAnswer === rightAnswer) {
       console.log('Correct!');
-      // eslint-disable-next-line consistent-return
-      return iter(getRoundData, numRaund + 1);
+      return iter(counter + 1);
     }
     console.log(`'${userAnswer}' is wrong answer ;(. Correct answer was '${rightAnswer}'`);
-    console.log(`Let's try again, ${userName}!`);
+    return console.log(`Let's try again, ${userName}!`);
   };
-  return iter(getGameDate, 0);
+  return iter(0);
 };

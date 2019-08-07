@@ -5,7 +5,7 @@ import generateGame from '..';
 const description = 'What number is missing in the progression?';
 const progressionLength = 10;
 
-const getGameDate = () => {
+const getData = () => {
   const firstElement = getRandomNum(1, 10);
   const progressionDiff = getRandomNum(1, 10);
   const hiddenElementPosition = getRandomNum(0, progressionLength - 1);
@@ -27,4 +27,4 @@ const getGameDate = () => {
   return iter(progression, 0);
 };
 
-export default () => generateGame(description, getGameDate);
+export default () => generateGame(description, getData);

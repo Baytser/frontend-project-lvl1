@@ -20,11 +20,11 @@ const isPrime = (num) => {
   return iter(2);
 };
 
-const getGameDate = () => {
-  const num = getRandomNum(0, 100);
-  const rightAnswer = isPrime(num) ? 'yes' : 'no';
-  const roundData = cons(String(num), rightAnswer);
+const getData = () => {
+  const question = getRandomNum(0, 100);
+  const rightAnswer = isPrime(question) ? 'yes' : 'no';
+  const roundData = cons(question, rightAnswer);
   return roundData;
 };
 
-export default () => generateGame(description, getGameDate);
+export default () => generateGame(description, getData);
