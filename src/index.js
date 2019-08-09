@@ -15,7 +15,8 @@ export default (description, getGameData) => {
 
   const iter = (counter) => {
     if (counter === roundsCount) {
-      return console.log(`Congratulations, ${userName}!`);
+      console.log(`Congratulations, ${userName}!`);
+      return null;
     }
     const currentGame = getGameData();
     console.log(`Question: ${car(currentGame)}`);
@@ -26,7 +27,8 @@ export default (description, getGameData) => {
       return iter(counter + 1);
     }
     console.log(`'${userAnswer}' is wrong answer ;(. Correct answer was '${rightAnswer}'`);
-    return console.log(`Let's try again, ${userName}!`);
+    console.log(`Let's try again, ${userName}!`);
+    return null;
   };
   return iter(0);
 };
