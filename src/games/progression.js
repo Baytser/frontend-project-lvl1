@@ -9,22 +9,20 @@ const getData = () => {
   const firstElement = getRandomNum(1, 10);
   const progressionDiff = getRandomNum(1, 10);
   const hiddenElementPosition = getRandomNum(0, progressionLength - 1);
-  const progression = '';
-
-  const iter = (accProgression, count) => {
+  const rightAnswer = firstElement + progressionDiff * hiddenElementPosition;
+  const iter = (progression, count) => {
     if (count === progressionLength) {
-      const rightAnswer = firstElement + progressionDiff * hiddenElementPosition;
-      const roundData = cons(accProgression, String(rightAnswer));
-      return roundData;
+      return progression;
     }
     if (count === hiddenElementPosition) {
-      return iter(`${accProgression} ..`, count + 1);
+      return iter(`${progression} ..`, count + 1);
     }
     const progressionElement = firstElement + progressionDiff * count;
-    return iter(`${accProgression} ${progressionElement}`, count + 1);
+    return iter(`${progression} ${progressionElement}`, count + 1);
   };
-
-  return iter(progression, 0);
+  const question = iter('', 0);
+  const roundData = cons(question, String(rightAnswer));
+  return roundData;
 };
 
 export default () => generateGame(description, getData);

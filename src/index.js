@@ -16,19 +16,19 @@ export default (description, getGameData) => {
   const iter = (counter) => {
     if (counter === roundsCount) {
       console.log(`Congratulations, ${userName}!`);
-      return null;
+      return;
     }
-    const currentGame = getGameData();
-    console.log(`Question: ${car(currentGame)}`);
+    const gameData = getGameData();
+    console.log(`Question: ${car(gameData)}`);
     const userAnswer = readlineSync.question('Your answer: ', { defaultInput: '' });
-    const rightAnswer = cdr(currentGame);
+    const rightAnswer = cdr(gameData);
     if (userAnswer === rightAnswer) {
       console.log('Correct!');
-      return iter(counter + 1);
+      iter(counter + 1);
+      return;
     }
     console.log(`'${userAnswer}' is wrong answer ;(. Correct answer was '${rightAnswer}'`);
     console.log(`Let's try again, ${userName}!`);
-    return null;
   };
   return iter(0);
 };

@@ -10,20 +10,18 @@ const getData = () => {
   const num1 = getRandomNum(0, 100);
   const num2 = getRandomNum(0, 100);
   const operation = random(operations);
+  const question = `${num1} ${operation} ${num2}`;
   let rightAnswer;
-  let question;
+
   switch (operation) {
     case '+':
       rightAnswer = num1 + num2;
-      question = `${num1} + ${num2}`;
       break;
     case '-':
       rightAnswer = num1 - num2;
-      question = `${num1} - ${num2}`;
       break;
     case '*':
       rightAnswer = num1 * num2;
-      question = `${num1} * ${num2}`;
       break;
     default:
       return false;
