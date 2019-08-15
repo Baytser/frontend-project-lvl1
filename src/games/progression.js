@@ -5,22 +5,23 @@ import generateGame from '..';
 const description = 'What number is missing in the progression?';
 const progressionLength = 10;
 
+const getQuestion = (progression, count, hiddenElementPosition, first, diff) => {
+  if (count === progressionLength) {
+    return progression;
+  }
+  if (count === hiddenElementPosition) {
+    return getQuestion(`${progression} ..`, count + 1, hiddenElementPosition, first, diff);
+  }
+  const progressionElement = first + diff * count;
+  return getQuestion(`${progression} ${progressionElement}`, count + 1, hiddenElementPosition, first, diff);
+};
+
 const getData = () => {
-  const firstElement = getRandomNum(1, 10);
-  const progressionDiff = getRandomNum(1, 10);
+  const first = getRandomNum(1, 10);
+  const diff = getRandomNum(1, 10);
   const hiddenElementPosition = getRandomNum(0, progressionLength - 1);
-  const rightAnswer = firstElement + progressionDiff * hiddenElementPosition;
-  const iter = (progression, count) => {
-    if (count === progressionLength) {
-      return progression;
-    }
-    if (count === hiddenElementPosition) {
-      return iter(`${progression} ..`, count + 1);
-    }
-    const progressionElement = firstElement + progressionDiff * count;
-    return iter(`${progression} ${progressionElement}`, count + 1);
-  };
-  const question = iter('', 0);
+  const rightAnswer = first + diff * hiddenElementPosition;
+  const question = getQuestion('', 0, hiddenElementPosition, first, diff);
   const roundData = cons(question, String(rightAnswer));
   return roundData;
 };

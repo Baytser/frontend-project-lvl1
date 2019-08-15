@@ -19,7 +19,8 @@ export default (description, getGameData) => {
       return;
     }
     const gameData = getGameData();
-    console.log(`Question: ${car(gameData)}`);
+    const question = car(gameData);
+    console.log(`Question: ${question}`);
     const userAnswer = readlineSync.question('Your answer: ', { defaultInput: '' });
     const rightAnswer = cdr(gameData);
     if (userAnswer === rightAnswer) {

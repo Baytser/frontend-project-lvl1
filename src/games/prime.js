@@ -8,14 +8,14 @@ const isPrime = (num) => {
   if (num < 2) {
     return false;
   }
-  const iter = (acc) => {
-    if (acc > Math.sqrt(num)) {
+  const iter = (counter) => {
+    if (counter > Math.sqrt(num)) {
       return true;
     }
-    if (num % acc === 0) {
+    if (num % counter === 0) {
       return false;
     }
-    return iter(acc + 1);
+    return iter(counter + 1);
   };
   return iter(2);
 };

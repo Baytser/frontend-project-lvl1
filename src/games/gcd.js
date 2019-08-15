@@ -5,17 +5,17 @@ import generateGame from '..';
 const description = 'Find the greatest common divisor of given numbers.';
 
 const getGcd = (num1, num2) => {
-  let firstNum = num1;
-  let secondNum = num2;
-  if (firstNum === 0 || secondNum === 0) {
-    return firstNum + secondNum;
+  let first = num1;
+  let second = num2;
+  if (first === 0 || second === 0) {
+    return first + second;
   }
-  if (firstNum > secondNum) {
-    firstNum %= secondNum;
+  if (first > second) {
+    first %= second;
   } else {
-    secondNum %= firstNum;
+    second %= first;
   }
-  return getGcd(firstNum, secondNum);
+  return getGcd(first, second);
 };
 
 const getData = () => {
